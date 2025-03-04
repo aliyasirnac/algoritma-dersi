@@ -9,6 +9,6 @@ def insertion_sort(arr):
         arr[j + 1] = key
 
 
-arr = [9, 4, 2, 6, 7, 8, 10, 5, 1, 2, 1 / 2]
+arr = [9, 4, 2, 6, 7, 8, 10, 5, 1]
 insertion_sort(arr)
 print(arr)
