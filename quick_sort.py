@@ -1,17 +1,11 @@
-def quick_sort(sequence): #sequnce is our array parameter
-    length=len(sequence) # length is number of elemenys in sequence
+def quick_sort(arr): #sequnce is our array parameter
+    length=len(arr) # length is number of elemenys in arr
     if length<=1:
-        return sequence
-    else:
-        pivot=sequence.pop() # pop removes and return the element index if it has empy paranthesis it removes the lastelement of the array and return it
-
-    items_greater=[]
-    items_lower=[]
+        return arr
+    pivot=arr.pop() # pop removes and return the element index if it has empy paranthesis it removes the lastelement of the array and return it
    
-    for item in sequence:
-        if item>pivot:
-            items_greater.append(item) # append adds the item to array
-        else:
-            items_lower.append(item)
-    return quick_sort(items_lower)+[pivot]+quick_sort(items_greater)
+    left = [x for x in arr if x <= pivot]
+    right = [x for x in arr if x > pivot]
+ 
+    return quick_sort(left)+[pivot]+quick_sort(right)
 print(quick_sort([0,3,2,5,9,8,7]))
